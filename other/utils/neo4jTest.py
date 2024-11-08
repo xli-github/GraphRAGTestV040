@@ -50,9 +50,9 @@ import json
 
 # 指定Parquet文件路径
 # 首次更新
-# GRAPHRAG_FOLDER="/Users/janetjiang/Desktop/agi_code/GraphRAGTestV040/ragtest/output"
+GRAPHRAG_FOLDER="/Users/janetjiang/Desktop/agi_code/GraphRAGTestV040/ragtest/output"
 # 增量更新
-GRAPHRAG_FOLDER="/Users/janetjiang/Desktop/agi_code/GraphRAGTestV040/ragtest/update_output"
+# GRAPHRAG_FOLDER="/Users/janetjiang/Desktop/agi_code/GraphRAGTestV040/ragtest/update_output"
 
 
 
