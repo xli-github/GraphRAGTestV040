@@ -161,14 +161,4 @@ RETURN n LIMIT 25;
 MATCH (n:`__Entity__`)                 
 WHERE n.name CONTAINS '八戒'                  
 RETURN n LIMIT 25;                  
- 
-## 4.4 API接口服务测试
-### (1)运行main.py脚本   
-**注意1:** 需要将代码中的如下代码中的文件路径，替换为你的对应工程的文件路径                  
-GRAPHRAG_FOLDER="/Users/janetjiang/Desktop/agi_code/GraphRAGTestV040/ragtest/update_output"                                                
-**注意2:** 大模型配置           
-**注意3:** 指定向量数据库的集合名称entity_description_embeddings，根据实际情况自定义调整                                     
-description_embedding_store = LanceDBVectorStore(collection_name="entity_description_embeddings")                  
-### (2)运行apiTest.py进行测试
-main.py脚本运行成功后，新开一个终端命令行，运行apiTest.py进行测试                 
-**注意:** 根据需求修改messages中的query的问题                     
+              
