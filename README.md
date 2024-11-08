@@ -1,6 +1,8 @@
 # 1、GraphRAG介绍
 就在两天前(2024.11.5) GraphRAG 发布了 0.4.0版本，该版本的代码经过一轮重构后，已于之前的代码结构有了很大的不同             
-该版本引入了增量更新索引和DRIFT图推理搜索查询(一种混合本地与全局的搜索的方法)                               
+该版本引入了增量更新索引和DRIFT图推理搜索查询(一种混合本地与全局的搜索的方法)               
+github地址:https://github.com/microsoft/graphrag            
+官网地址:https://microsoft.github.io/graphrag/query/overview/                                                
 
 ## 1.1 定义
 GraphRAG是微软研究院开发的一种创新型检索增强生成（RAG）方法，旨在提高大语言模型LLM在处理复杂信息和私有数据集时的推理能力                             
