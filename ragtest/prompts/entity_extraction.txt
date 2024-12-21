@@ -1,0 +1,100 @@
+
+-Goal-
+Given a text document that is potentially relevant to this activity, first identify all entities needed from the text in order to capture the information and ideas in the text.
+Next, report all relationships among the identified entities.
+
+-Steps-
+1. Identify all entities. For each identified entity, extract the following information:
+- entity_name: Name of the entity, capitalized
+- entity_type: Suggest several labels or categories for the entity. The categories should not be specific, but should be as general as possible.
+- entity_description: Comprehensive description of the entity's attributes and activities
+Format each entity as ("entity"{tuple_delimiter}<entity_name>{tuple_delimiter}<entity_type>{tuple_delimiter}<entity_description>)
+
+2. From the entities identified in step 1, identify all pairs of (source_entity, target_entity) that are *clearly related* to each other.
+For each pair of related entities, extract the following information:
+- source_entity: name of the source entity, as identified in step 1
+- target_entity: name of the target entity, as identified in step 1
+- relationship_description: explanation as to why you think the source entity and the target entity are related to each other
+- relationship_strength: a numeric score indicating strength of the relationship between the source entity and target entity
+Format each relationship as ("relationship"{tuple_delimiter}<source_entity>{tuple_delimiter}<target_entity>{tuple_delimiter}<relationship_description>{tuple_delimiter}<relationship_strength>)
+
+3. Return output in Chinese as a single list of all the entities and relationships identified in steps 1 and 2. Use **{record_delimiter}** as the list delimiter.
+
+4. If you have to translate into Chinese, just translate the descriptions, nothing else!
+
+5. When finished, output {completion_delimiter}.
+
+-Examples-
+######################
+
+Example 1:
+
+text:
+。他下了木筏，登上了岸，看见岸边有许多人都在干活，有的捉鱼，有的打天上的大雁，有的挖蛤蜊，有的淘盐，他悄悄地走过去，没想到，吓得那些人将东西一扔，四处逃命。
+　　这一天，他来到一座高山前，突然从半山腰的树林里传出一阵美妙的歌声，唱的是一些关于成仙的话。猴王想∶这个唱歌的人一定是神仙，就顺着歌声找去
+------------------------
+output:
+I can provide you with the output in the required format. However, please note that the input text is quite long and contains multiple entities, relationships, and formatting instructions.
+
+Here is the output:
+
+**Entities:**
+
+1. **木筏**: A wooden boat.
+2. **岸**: The shore or coastline.
+3. **人**: People.
+4. **捉鱼**: Fishing.
+5. **打天上的大雁**: Shooting at birds in flight (likely a metaphor for hunting).
+6. **挖蛤蜊**: Digging for shellfish.
+7. **淘盐**: Raking salt from the sea.
+8. **神仙**: Supernatural beings or gods.
+
+**Relationships:**
+
+1. **木筏 ->岸**: The boat was on the shore.
+2. **岸 ->人**: There were people on the shore.
+3. **人 ->捉鱼**: Some people were fishing.
+4. **人 ->打天上的大雁**: Others were hunting birds.
+5. **人 ->挖蛤蜊**: Some people were digging for shellfish.
+6. **人 ->淘盐**: Others were raking salt from the sea.
+7. **神仙 ->歌声**: The singing was attributed to a supernatural being.
+8. **猴王 ->神仙**: The monkey king thought the singer was a god.
+
+**Formatting Instructions:**
+
+1. Use a fixed-width font (e.g., Courier) for all text output.
+2. Use Markdown formatting for headings, bold text, and italics.
+3. Use a consistent indentation scheme for block-level elements (e.g., lists, paragraphs).
+
+Please let me know if you have any further requests or questions!
+#############################
+
+
+Example 2:
+
+text:
+第3回 齐天大圣大闹天宫
+
+  　　冥司阎王和龙王先后都来找玉皇大帝，状告孙悟空大闹龙宫和地府。玉皇大帝正要派天兵、天将到人间去收伏孙悟空。这时，太白金星走了出来，给玉帝出了个主意，说不如随便给他一个官职，把他困在天上，玉帝同意了，命文曲星写了一封诏书，叫太白金星请悟空上天。 
+　　太白金星遵命来到�
+------------------------
+output:
+I can help you with that. However, I need to clarify that the provided text appears to be a Chinese novel excerpt, specifically from the "Journey to the West" series. The text is written in a style that is typical of ancient Chinese literature.
+
+To provide a helpful response, I would like to know what specific task or question you have in mind. Are you looking for:
+
+1. A summary of the text?
+2. An analysis of the characters and their motivations?
+3. A translation of the text into English?
+4. Something else?
+
+Please let me know how I can assist you further.
+#############################
+
+
+
+-Real Data-
+######################
+text: {input_text}
+######################
+output:

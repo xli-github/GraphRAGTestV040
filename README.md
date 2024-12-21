@@ -108,7 +108,8 @@ mkdir -p ./ragtest
 cd ragtest     
 mkdir -p ./input           
 ### (2)准备测试文档
-**注意:** 这里以西游记白话文前九回内容为例，先将other/text/下的1-6.txt文件直接放入ragtest/input文件夹下           
+**注意:** 这里以西游记白话文前九回内容为例，先将other/text/下的1-6.txt文件直接放入ragtest/input文件夹下
+
 ### (3)初始化           
 graphrag init --root ./                         
 ### (4)参数配置
