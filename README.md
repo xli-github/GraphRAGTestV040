@@ -104,24 +104,23 @@ pip install -r requirements.txt
 ## 4.1 首次构建GraphRAG索引
 ### (1)创建所需文件夹          
 在当前项目下创建个文件夹，**注意:** 这里的ragtest文件夹为自定义文件夹，下面所有操作均在该文件夹目录下进行操作         
-mkdir -p ./ragtest          
-cd ragtest     
-mkdir -p ./input           
+mkdir -p ./ragtest              
+mkdir -p ./ragtest/input           
 ### (2)准备测试文档
 **注意:** 这里以西游记白话文前九回内容为例，先将other/text/下的1-6.txt文件直接放入ragtest/input文件夹下
 
 ### (3)初始化           
-graphrag init --root ./                         
+graphrag init --root ./ragtest                         
 ### (4)参数配置
 初始化完成后，设置.env和settings.yaml,具体参考提供的other/temp下的.env和settings.yaml文件内容，直接拷贝即可                                 
 ### (5)优化提示词     
-python -m graphrag prompt-tune --config ./settings.yaml --root ./ --language Chinese --output ./prompts                           
+python -m graphrag prompt-tune --config ./ragtest/settings.yaml --root ./ragtest --language Chinese --output ./ragtest/prompts                           
 ### (6)构建索引
-graphrag index --root ./                       
+graphrag index --root ./ragtest                       
 ### (7)测试
-graphrag query --root ./ --method global --query "这个故事的主题是什么?"                              
-graphrag query --root ./ --method local --query "谁是唐僧，他的主要关系是什么?"            
-graphrag query --root ./ --method drift --query "谁是唐僧，他的主要关系是什么?"                
+graphrag query --root ./ragtest --method global --query "这个故事的主题是什么?"                              
+graphrag query --root ./ragtest --method local --query "谁是唐僧，他的主要关系是什么?"            
+graphrag query --root ./ragtest --method drift --query "谁是唐僧，他的主要关系是什么?"                
 
 ## 4.2 知识图谱使用neo4j图数据库进行可视化
 ### (1)配置数据库
@@ -131,7 +130,7 @@ https://console-preview.neo4j.io/tools/query
 测试代码在utils文件夹，将other/utils文件夹直接拷贝到ragtest文件夹下                      
 打开neo4jTest.py代码根据自己的实际情况进行调整                              
 **修改文件所在路径，替换为你的对应工程的文件路径**                                
-GRAPHRAG_FOLDER="/Users/janetjiang/Desktop/agi_code/GraphRAGTestV040/ragtest/output"                 
+GRAPHRAG_FOLDER="/Users/xli/Projects/GraphRAGTestV040/ragtest/output"                 
 **配置自己的neo4j的数据库连接信息**           
 NEO4J_URI="neo4j+s://7febbfaf.databases.neo4j.io"          
 NEO4J_USERNAME="neo4j"            
@@ -156,7 +155,7 @@ update_index_storage:
     type: file                                     
     base_dir: "update_output"               
 ### (3)构建索引
-graphrag index --root ./                   
+graphrag index --root ./ragtest                  
 ### (4)知识图谱可视化
 打开neo4jTest.py代码根据自己的实际情况进行调整,修改文件所在路径为存储增量数据的文件路径                                            
 GRAPHRAG_FOLDER="/Users/janetjiang/Desktop/agi_code/GraphRAGTestV040/ragtest/update_output"            
