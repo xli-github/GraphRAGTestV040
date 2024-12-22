@@ -168,3 +168,6 @@ MATCH (n:`__Entity__`)
 WHERE n.name CONTAINS '八戒'                  
 RETURN n LIMIT 25;                  
               
+
+### additional neo4j usecase, for the createneo4.py and start_neo4.sh see
+https://www.bilibili.com/list/watchlater?bvid=BV16TSqYqEGb&oid=113395122636859
