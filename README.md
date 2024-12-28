@@ -170,3 +170,10 @@ RETURN n LIMIT 25;
 
 ### additional neo4j usecase, for the createneo4.py and start_neo4.sh see
 https://www.bilibili.com/list/watchlater?bvid=BV16TSqYqEGb&oid=113395122636859
+
+### 0.4.0 did not work because two graphrag files have to be updated
+【20分钟学会Ollama本地部署GraphRAG服务，全程干货！环境配置，源码，推理展示详细流程！【大模型|LLM|部署|GraphRAG】】 https://www.bilibili.com/video/BV1nXiRYXEHt/?share_source=copy_web&vd_source=e89b499f62727435f9a59533a157a710
+This video shows how to update these two files
+
+miniconda3/envs/graphragtestv040/lib/python3.11/site-packages/graphrag/llm/openai/openai_embeddings_llm.py
+miniconda3/envs/graphragtestv040/lib/python3.11/site-packages/graphrag/query/llm/oai/embedding.py
